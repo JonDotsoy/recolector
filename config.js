@@ -2,6 +2,9 @@ require("dotenv").config();
 const e = require("@jondotsoy/envconfig").envconfig();
 
 module.exports = {
+    serve: {
+        port: e("PORT", { type: "number" }) || 80,
+    },
     mongodb: {
         tls: e("MONGODB_TLS", { type: "boolean" }) || false,
         host: e("MONGODB_HOST", { required: true }),
