@@ -5,6 +5,7 @@ module.exports = {
     serve: {
         port: e("PORT", { type: "number" }) || 80,
     },
+    secret: e("SECRET") || "1234",
     mongodb: {
         tls: e("MONGODB_TLS", { type: "boolean" }) || false,
         host: e("MONGODB_HOST", { required: true }),
